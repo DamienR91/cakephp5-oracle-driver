@@ -26,7 +26,7 @@ Ensure the Oracle Plugin is loaded in your src/Application.php file
     {
         parent::bootstrap();
 
-        $this->addPlugin(\CakeDC\OracleDriver\Plugin::class, ['bootstrap' => true]);
+        $this->addPlugin(\Portal89\OracleDriver\Plugin::class, ['bootstrap' => true]);
     }
 ```
 
