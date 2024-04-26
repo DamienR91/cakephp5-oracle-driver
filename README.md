@@ -1,16 +1,7 @@
-# CakePHP 4 Driver for Oracle Database
+# CakePHP 5 Driver for Oracle Database
 
-[![Downloads](https://poser.pugx.org/cakedc/cakephp-oracle-driver/d/total.png)](https://packagist.org/packages/cakedc/cakephp-oracle-driver)
-[![Latest Version](https://poser.pugx.org/cakedc/cakephp-oracle-driver/v/stable.png)](https://packagist.org/packages/cakedc/cakephp-oracle-driver)
-
-Versions and branches
----------------------
-
-| CakePHP | CakeDC Oracle Driver Plugin | Tag   | Notes |
-| :-------------: | :------------------------: | :--:  | :---- |
-| 4.0             | [5.x](https://github.com/CakeDC/cakephp-oracle-driver/tree/5.x)                  | 5.0.0 | stable
-| ^3.8       <4.0 | [4.x](https://github.com/CakeDC/cakephp-oracle-driver/tree/4.x)                  | 4.0.0 | stable |
-| ^3.7            | [3.x](https://github.com/CakeDC/cakephp-oracle-driver/tree/3.x)                  | 3.0.0 | stable |
+[![Downloads](https://poser.pugx.org/portal89/cakephp5-oracle-driver/d/total.png)](https://packagist.org/packages/portal89/cakephp5-oracle-driver)
+[![Latest Version](https://poser.pugx.org/portal89/cakephp5-oracle-driver/v/stable.png)](https://packagist.org/packages/portal89/cakephp5-oracle-driver)
 
 
 ## Installation
@@ -42,7 +33,7 @@ Ensure the Oracle Plugin is loaded in your src/Application.php file
 
 ## Requirements
 
-- CakePHP 4.0+
+- CakePHP 5.0+
 - an Oracle PHP extension
   - OCI8 (PHP extension built with PHP)
   - PDO_OCI (PHP extension built with PHP)
@@ -64,9 +55,9 @@ Here is an example datasource configuration:
 return [
     'Datasources' => [
         'default' => [
-            'className' => 'CakeDC\OracleDriver\Database\OracleConnection',
-            'driver' => 'CakeDC\OracleDriver\Database\Driver\OracleOCI', # For OCI8
-            #'driver' => 'CakeDC\\OracleDriver\\Database\\Driver\\OraclePDO', # For PDO_OCI
+            'className' => 'Portal89\OracleDriver\Database\OracleConnection',
+            'driver' => 'Portal89\OracleDriver\Database\Driver\OracleOCI', # For OCI8
+            #'driver' => 'Portal89\\OracleDriver\\Database\\Driver\\OraclePDO', # For PDO_OCI
             'persistent' => true,           // Database persistent connection between http requests
             'host' => 'oracle11g',          // Database host name or IP address
             //'port' => 'nonstandard_port', // Database port number (default: 1521)
@@ -119,19 +110,12 @@ Roadmap
 Support
 -------
 
-For bugs and feature requests, please use the [issues](https://github.com/cakedc/cakephp-oracle-driver/issues) section of this repository.
-
-Commercial support is also available, [contact us](http://cakedc.com/contact) for more information.
-
-Contributing
-------------
-
-This repository follows the [CakeDC Plugin Standard](http://cakedc.com/plugin-standard). If you'd like to contribute new features, enhancements or bug fixes to the plugin, please read our [Contribution Guidelines](http://cakedc.com/contribution-guidelines) for detailed instructions.
+For bugs and feature requests, please use the [issues](https://github.com/portal89/cakephp5-oracle-driver/issues) section of this repository.
 
 License
 -------
 
-Copyright 2016 - 2020 Cake Development Corporation (CakeDC). All rights reserved.
+Copyright 2024 - Cake Development Corporation (CakeDC). All rights reserved.
 
 Licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) License. Redistributions of the source code included in this repository must retain the copyright notice found in each file.
 
