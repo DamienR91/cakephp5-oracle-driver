@@ -12,7 +12,7 @@ You can install this plugin into your CakePHP application using
 The recommended way to install Composer packages is:
 
 ```
-composer require cakedc/cakephp-oracle-driver
+composer require portal89/cakephp5-oracle-driver
 ```
 
 
