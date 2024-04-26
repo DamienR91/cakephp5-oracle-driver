@@ -91,7 +91,7 @@ system-wide `tnsnames.ora` file.
 
 The above array format is translated into Oracle's
 [Easy Connection Naming][oracle-ecn]. You can find the logic for this in
-`\CakeDC\OracleDriver\Database\Driver\OracleBase::getDSN()`.
+`\Portal89\OracleDriver\Database\Driver\OracleBase::getDSN()`.
 
 [oracle-ecn]: https://docs.oracle.com/cd/B19306_01/network.102/b14212/naming.htm#sthref783
 
@@ -115,7 +115,7 @@ For bugs and feature requests, please use the [issues](https://github.com/portal
 License
 -------
 
-Copyright 2024 - Cake Development Corporation (CakeDC). All rights reserved.
+Copyright 2024 - Portal89 Assessoria e Suporte em Informatica LTDA. All rights reserved.
 
 Licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) License. Redistributions of the source code included in this repository must retain the copyright notice found in each file.
 
