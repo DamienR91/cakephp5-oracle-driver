@@ -1,6 +1,6 @@
 {
-    "name": "cakedc/cakephp-oracle-driver",
-    "description": "CakePHP 3 Driver for Oracle Database",
+    "name": "portal89/cakephp5-oracle-driver",
+    "description": "CakePHP 5 Driver for Oracle Database",
     "type": "cakephp-plugin",
     "keywords": [
         "cakephp",
@@ -8,22 +8,23 @@
         "database",
         "driver"
     ],
-    "homepage": "https://github.com/cakedc/cakephp-oracle-driver",
+    "homepage": "https://github.com/portal89/cakephp5-oracle-driver",
     "license": "MIT",
     "authors": [
         {
-            "name": "CakeDC",
-            "homepage": "http://www.cakedc.com",
-            "role": "Author"
+            "name": "Fábio Mathias",
+            "homepage": "https://portal89.com.br",
+            "role": "Author, developer, bug eliminator"
         },
         {
-            "name": "Others",
-            "homepage": "https://github.com/cakedc/cakephp-oracle-driver/graphs/contributors"
+            "name": "João Rafael",
+            "homepage": "https://portal89.com.br",
+            "role": "Developer, bug eliminator"
         }
     ],
     "support": {
-        "issues": "https://github.com/cakedc/cakephp-oracle-driver/issues",
-        "source": "https://github.com/cakedc/cakephp-oracle-driver"
+        "issues": "https://github.com/portal89/cakephp5-oracle-driver/issues",
+        "source": "https://github.com/portal89/cakephp5-oracle-driver"
     },
     "config": {
         "preferred-install": "src"
@@ -41,7 +42,7 @@
     "repositories": [],
     "autoload": {
         "psr-4": {
-            "CakeDC\\OracleDriver\\": "src"
+            "Portal89\\OracleDriver\\": "src"
         }
     },
     "autoload-dev": {
