@@ -2,22 +2,22 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-namespace CakeDC\OracleDriver\Test\TestCase\ORM;
+namespace Portal89\OracleDriver\Test\TestCase\ORM;
 
 use Cake\TestSuite\TestCase;
-use CakeDC\OracleDriver\ORM\Locator\LocatorInterface;
-use CakeDC\OracleDriver\ORM\Locator\MethodLocator;
-use CakeDC\OracleDriver\ORM\Method;
-use CakeDC\OracleDriver\ORM\MethodRegistry;
+use Portal89\OracleDriver\ORM\Locator\LocatorInterface;
+use Portal89\OracleDriver\ORM\Locator\MethodLocator;
+use Portal89\OracleDriver\ORM\Method;
+use Portal89\OracleDriver\ORM\MethodRegistry;
 
 /**
  * Test case for MethodRegistry
@@ -27,7 +27,7 @@ class MethodRegistryTest extends TestCase
     /**
      * Original MethodLocator.
      *
-     * @var \CakeDC\OracleDriver\ORM\Locator\LocatorInterface
+     * @var \Portal89\OracleDriver\ORM\Locator\LocatorInterface
      */
     protected $_originalLocator;
 
@@ -57,7 +57,7 @@ class MethodRegistryTest extends TestCase
     /**
      * Sets and returns mock LocatorInterface instance.
      *
-     * @return \CakeDC\OracleDriver\ORM\Locator\LocatorInterface
+     * @return \Portal89\OracleDriver\ORM\Locator\LocatorInterface
      */
     protected function _setMockLocator()
     {

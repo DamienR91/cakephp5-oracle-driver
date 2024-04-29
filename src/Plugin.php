@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @copyright Copyright 2016 - 2019, Cake Development Corporation (http://cakedc.com)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver;
+namespace Portal89\OracleDriver;
 
 use Cake\Core\BasePlugin;
 

@@ -2,21 +2,21 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-namespace CakeDC\OracleDriver\Panel;
+namespace Portal89\OracleDriver\Panel;
 
 use Cake\Datasource\ConnectionManager;
-use CakeDC\OracleDriver\Database\Log\DebugMethodLog;
-use CakeDC\OracleDriver\Database\OracleConnection;
-use CakeDC\OracleDriver\ORM\MethodRegistry;
+use Portal89\OracleDriver\Database\Log\DebugMethodLog;
+use Portal89\OracleDriver\Database\OracleConnection;
+use Portal89\OracleDriver\ORM\MethodRegistry;
 use DebugKit\DebugPanel;
 
 /**

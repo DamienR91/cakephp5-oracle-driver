@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace CakeDC\OracleDriver\TestSuite;
+namespace Portal89\OracleDriver\TestSuite;
 
 use Cake\Datasource\ConnectionManager;
 use PHPUnit\Framework\AssertionFailedError;

@@ -2,23 +2,23 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database;
+namespace Portal89\OracleDriver\Database;
 
 use Cake\Core\Exception\Exception;
 use Cake\Database\Connection;
 use Cake\Database\StatementInterface;
-use CakeDC\OracleDriver\Database\Log\MethodLogger;
-use CakeDC\OracleDriver\Database\Log\MethodLoggingStatement;
-use CakeDC\OracleDriver\Database\Schema\CachedMethodsCollection;
-use CakeDC\OracleDriver\Database\Schema\MethodsCollection;
+use Portal89\OracleDriver\Database\Log\MethodLogger;
+use Portal89\OracleDriver\Database\Log\MethodLoggingStatement;
+use Portal89\OracleDriver\Database\Schema\CachedMethodsCollection;
+use Portal89\OracleDriver\Database\Schema\MethodsCollection;
 
 class OracleConnection extends Connection
 {
@@ -26,21 +26,21 @@ class OracleConnection extends Connection
      * Driver object, responsible for creating the real connection
      * and provide specific SQL dialect.
      *
-     * @var \CakeDC\OracleDriver\Database\Driver\OracleBase
+     * @var \Portal89\OracleDriver\Database\Driver\OracleBase
      */
     protected $_driver;
 
     /**
      * Logger object instance.
      *
-     * @var \CakeDC\OracleDriver\Database\Log\MethodLogger
+     * @var \Portal89\OracleDriver\Database\Log\MethodLogger
      */
     protected $_methodLogger = null;
 
     /**
      * The methods collection object
      *
-     * @var \CakeDC\OracleDriver\Database\Schema\MethodsCollection
+     * @var \Portal89\OracleDriver\Database\Schema\MethodsCollection
      */
     protected $_schemaMethodsCollection;
 
@@ -48,7 +48,7 @@ class OracleConnection extends Connection
      * Builds oracle connection based on generic cakephp connection class.
      *
      * @param \Cake\Database\Connection $connection Connection object.
-     * @return \CakeDC\OracleDriver\Database\OracleConnection
+     * @return \Portal89\OracleDriver\Database\OracleConnection
      */
     public static function build(Connection $connection)
     {
@@ -61,8 +61,8 @@ class OracleConnection extends Connection
     /**
      * Gets or sets a Schema\Collection object for this connection.
      *
-     * @param \CakeDC\OracleDriver\Database\Schema\MethodsCollection|null $collection The schema collection object
-     * @return \CakeDC\OracleDriver\Database\Schema\MethodsCollection
+     * @param \Portal89\OracleDriver\Database\Schema\MethodsCollection|null $collection The schema collection object
+     * @return \Portal89\OracleDriver\Database\Schema\MethodsCollection
      */
     public function methodSchemaCollection(?MethodsCollection $collection = null)
     {
@@ -122,7 +122,7 @@ class OracleConnection extends Connection
      * Sets the method logger object instance. When called with
      * no arguments it returns the currently setup logger instance.
      *
-     * @param \CakeDC\OracleDriver\Database\Log\MethodLogger $instance logger object instance
+     * @param \Portal89\OracleDriver\Database\Log\MethodLogger $instance logger object instance
      * @return object logger instance
      */
     public function methodLogger(?MethodLogger $instance = null)

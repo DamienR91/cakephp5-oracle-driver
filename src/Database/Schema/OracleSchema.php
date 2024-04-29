@@ -2,25 +2,25 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\Schema;
+namespace Portal89\OracleDriver\Database\Schema;
 
-use Cake\Database\Schema\BaseSchema;
+use Cake\Database\Schema\SchemaDialect;
 use Cake\Database\Schema\TableSchema;
 use Cake\Utility\Hash;
-use CakeDC\OracleDriver\Database\Exception\UnallowedDataTypeException;
+use Portal89\OracleDriver\Database\Exception\UnallowedDataTypeException;
 
 /**
  * Schema management/reflection features for Oracle.
  */
-class OracleSchema extends BaseSchema
+class OracleSchema extends SchemaDialect
 {
     protected $_constraints = [];
 
@@ -334,7 +334,7 @@ WHERE 1=1 " . ($useOwner ? $ownerCondition : '') . $objectCondition . " ORDER BY
     /**
      * Convert parameter description results into abstract schema fields.
      *
-     * @param \CakeDC\OracleDriver\Database\Schema\MethodSchema $method The method object to append parameters to.
+     * @param \Portal89\OracleDriver\Database\Schema\MethodSchema $method The method object to append parameters to.
      * @param array $row The row data from `describeParametersSql`.
      * @return void
      */

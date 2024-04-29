@@ -11,5 +11,5 @@
 
 use Cake\Database\Type;
 
-Type::map('cursor', 'CakeDC\OracleDriver\Database\Type\CursorType');
-Type::map('boolean', 'CakeDC\OracleDriver\Database\Type\BoolType');
+Type::map('cursor', 'Portal89\OracleDriver\Database\Type\CursorType');
+Type::map('boolean', 'Portal89\OracleDriver\Database\Type\BoolType');

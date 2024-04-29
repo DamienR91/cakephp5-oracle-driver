@@ -34,7 +34,7 @@ You'll often need this functions, for example
 
 Provided utility functions:
 
-`CakeDC\OracleDriver\Database\FunctionsBuilder`
+`Portal89\OracleDriver\Database\FunctionsBuilder`
 `FunctionsBuilder::toChar(string)`
 `FunctionsBuilder::toCharWithFormat(string)`
 `FunctionsBuilder::toDate(string, string)`

@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\TestSuite\Fixture;
+namespace Portal89\OracleDriver\TestSuite\Fixture;
 
 use Cake\Core\Configure;
 use Cake\Core\Exception\Exception;
@@ -215,7 +215,7 @@ class OracleFixtureManager
     /**
      * Runs the drop and create commands on the fixtures if necessary.
      *
-     * @param \CakeDC\OracleDriver\TestSuite\Fixture\MethodTestFixture $fixture the fixture object to create
+     * @param \Portal89\OracleDriver\TestSuite\Fixture\MethodTestFixture $fixture the fixture object to create
      * @param \Cake\Database\Connection $db The Connection object instance to use
      * @param array $sources The existing tables in the datasource.
      * @param bool $drop whether drop the fixture if it is already created or not
@@ -386,7 +386,7 @@ class OracleFixtureManager
      * Check whether or not a fixture has been inserted in a given connection name.
      *
      * @param string $connection The connection name.
-     * @param \CakeDC\OracleDriver\TestSuite\Fixture\MethodTestFixture $fixture The fixture to check.
+     * @param \Portal89\OracleDriver\TestSuite\Fixture\MethodTestFixture $fixture The fixture to check.
      * @return bool
      */
     public function isFixtureSetup($connection, $fixture)

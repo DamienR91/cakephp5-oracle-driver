@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\OCI8;
+namespace Portal89\OracleDriver\Database\OCI8;
 
 use Cake\Core\InstanceConfigTrait;
 use PDO;
@@ -51,7 +51,7 @@ class OCI8Connection extends PDO
      * @param string $password Oracle user's password.
      * @param array $options Additional connection settings.
      *
-     * @throws \CakeDC\OracleDriver\Database\OCI8\OCI8Exception
+     * @throws \Portal89\OracleDriver\Database\OCI8\OCI8Exception
      */
     public function __construct($dsn, $username, $password, $options)
     {
@@ -119,15 +119,15 @@ class OCI8Connection extends PDO
     /**
      * {@inheritdoc}
      */
-    public function prepare($statement, $options = null)
+    public function prepare(string $query, array $options = []): \PDOStatement|false
     {
-        return new OCI8Statement($this->dbh, $statement, $this);
+        return new \OCI8Statement($this->dbh, $query, $this);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function query($statement, $mode = PDO::ATTR_DEFAULT_FETCH_MODE, $arg3 = null)
+    public function query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): \PDOStatement|false
     {
         $args = func_get_args();
         $sql = $args[0];
@@ -177,7 +177,7 @@ class OCI8Connection extends PDO
      * @deprecated Use inTransaction() instead
      * @return bool
      */
-    public function isTransaction()
+    public function isTransaction(): bool
     {
         return $this->inTransaction();
     }

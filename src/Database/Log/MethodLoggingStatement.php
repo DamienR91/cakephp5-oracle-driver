@@ -2,17 +2,17 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\Log;
+namespace Portal89\OracleDriver\Database\Log;
 
-use CakeDC\OracleDriver\Database\Statement\Method\MethodStatementDecorator;
+use Portal89\OracleDriver\Database\Statement\Method\MethodStatementDecorator;
 use Exception;
 
 /**
@@ -23,7 +23,7 @@ class MethodLoggingStatement extends MethodStatementDecorator
     /**
      * Logger instance responsible for actually doing the logging task
      *
-     * @var \CakeDC\OracleDriver\Database\Log\MethodLogger
+     * @var \Portal89\OracleDriver\Database\Log\MethodLogger
      */
     protected $_logger;
 
@@ -66,7 +66,7 @@ class MethodLoggingStatement extends MethodStatementDecorator
      * Copies the logging data to the passed LoggedMethod and sends it
      * to the logging system.
      *
-     * @param \CakeDC\OracleDriver\Database\Log\LoggedMethod $method The method to log.
+     * @param \Portal89\OracleDriver\Database\Log\LoggedMethod $method The method to log.
      * @param array $params List of values to be bound to method.
      * @param float $startTime The microtime when the method was executed.
      * @return void

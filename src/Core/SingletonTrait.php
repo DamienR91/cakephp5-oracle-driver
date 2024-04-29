@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace CakeDC\OracleDriver\Core;
+namespace Portal89\OracleDriver\Core;
 
 /**
  * Singleton trait.

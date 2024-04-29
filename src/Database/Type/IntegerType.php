@@ -14,7 +14,7 @@ declare(strict_types=1);
  * @since 3.0.0
  * @license https://opensource.org/licenses/mit-license.php MIT License
  */
-namespace CakeDC\OracleDriver\Database\Type;
+namespace Portal89\OracleDriver\Database\Type;
 
 use Cake\Database\DriverInterface;
 use Cake\Database\Type\BaseType;

@@ -12,7 +12,7 @@ You can install this plugin into your CakePHP application using
 The recommended way to install Composer packages is:
 
 ```
-composer require portal89/cakephp5-oracle-driver:"dev-master"
+composer require portal89/cakephp5-oracle-driver
 ```
 
 
@@ -115,7 +115,7 @@ For bugs and feature requests, please use the [issues](https://github.com/portal
 License
 -------
 
-Copyright 2024 - Portal89 Assessoria e Suporte em Informatica LTDA. All rights reserved.
+Copyright 2024 - Cake Development Corporation (CakeDC). All rights reserved.
 
 Licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) License. Redistributions of the source code included in this repository must retain the copyright notice found in each file.
 

@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\Log;
+namespace Portal89\OracleDriver\Database\Log;
 
 use Cake\Log\Log;
 
@@ -19,7 +19,7 @@ class MethodLogger
     /**
      * Writes a LoggedMethod into a log
      *
-     * @param \CakeDC\OracleDriver\Database\Log\LoggedMethod $method to be written in log
+     * @param \Portal89\OracleDriver\Database\Log\LoggedMethod $method to be written in log
      * @return void
      */
     public function log(LoggedMethod $method)
@@ -34,7 +34,7 @@ class MethodLogger
      * Wrapper function for the logger object, useful for unit testing
      * or for overriding in subclasses.
      *
-     * @param \CakeDC\OracleDriver\Database\Log\LoggedMethod $method to be written in log
+     * @param \Portal89\OracleDriver\Database\Log\LoggedMethod $method to be written in log
      * @return void
      */
     protected function _log($method)
@@ -46,7 +46,7 @@ class MethodLogger
      * Helper function used to replace method placeholders by the real
      * params used to execute the method
      *
-     * @param \CakeDC\OracleDriver\Database\Log\LoggedMethod $method The method to log
+     * @param \Portal89\OracleDriver\Database\Log\LoggedMethod $method The method to log
      * @return string
      */
     protected function _interpolate($method)

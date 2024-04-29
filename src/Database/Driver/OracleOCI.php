@@ -15,6 +15,7 @@ namespace Portal89\OracleDriver\Database\Driver;
 use Portal89\OracleDriver\Database\OCI8\OCI8Connection;
 use Portal89\OracleDriver\Database\Statement\Method\MethodOracleStatement;
 use Portal89\OracleDriver\Database\Statement\Method\MethodPDOStatement;
+use Cake\Database\DriverFeatureEnum;
 
 class OracleOCI extends OracleBase
 {
@@ -72,6 +73,11 @@ class OracleOCI extends OracleBase
      * @return bool
      */
     public function isOci()
+    {
+        return true;
+    }
+
+    public function supports(DriverFeatureEnum $feature): bool
     {
         return true;
     }

@@ -2,21 +2,21 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-namespace CakeDC\OracleDriver\Test\TestCase\Database;
+namespace Portal89\OracleDriver\Test\TestCase\Database;
 
 use Cake\Database\Expression\IdentifierExpression;
 use Cake\Database\Query;
 use Cake\Test\TestCase\Database\QueryTest as CakeQueryTest;
-use CakeDC\OracleDriver\Database\FunctionsBuilder;
+use Portal89\OracleDriver\Database\FunctionsBuilder;
 
 /**
  * Tests Query class
@@ -521,7 +521,7 @@ class QueryTest extends CakeQueryTest
     public function testUnionOrderBy()
     {
         $this->skipIf(
-            ($this->connection->getDriver() instanceof \CakeDC\OracleDriver\Database\Driver\OracleBase),
+            ($this->connection->getDriver() instanceof \Portal89\OracleDriver\Database\Driver\OracleBase),
             'Driver does not support ORDER BY in UNIONed queries.'
         );
         parent::testUnionOrderBy();

@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\ORM\Method;
+namespace Portal89\OracleDriver\ORM\Method;
 
 use Cake\Collection\CollectionTrait;
 use Cake\Database\Exception;
@@ -110,7 +110,7 @@ class ResultSet implements ResultSetInterface
     /**
      * Constructor
      *
-     * @param \CakeDC\OracleDriver\ORM\Method $repository Method object instance.
+     * @param \Portal89\OracleDriver\ORM\Method $repository Method object instance.
      * @param \Cake\Database\StatementInterface $statement The statement to fetch from
      * @param array $options Additional resultset options that setup result entity.
      * @internal param \Cake\ORM\Query $query Query from where results come

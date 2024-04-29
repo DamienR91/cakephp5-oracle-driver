@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\Driver;
+namespace Portal89\OracleDriver\Database\Driver;
 
 use Cake\Database\Driver;
 use Cake\Database\Query;
@@ -19,11 +19,11 @@ use Cake\Database\StatementInterface;
 use Cake\Database\ValueBinder;
 use Cake\Http\Exception\NotImplementedException;
 use Cake\Log\Log;
-use CakeDC\OracleDriver\Config\ConfigTrait;
-use CakeDC\OracleDriver\Database\Dialect\OracleDialectTrait;
-use CakeDC\OracleDriver\Database\Oracle12Compiler;
-use CakeDC\OracleDriver\Database\OracleCompiler;
-use CakeDC\OracleDriver\Database\Statement\OracleStatement;
+use Portal89\OracleDriver\Config\ConfigTrait;
+use Portal89\OracleDriver\Database\Dialect\OracleDialectTrait;
+use Portal89\OracleDriver\Database\Oracle12Compiler;
+use Portal89\OracleDriver\Database\OracleCompiler;
+use Portal89\OracleDriver\Database\Statement\OracleStatement;
 use PDO;
 
 abstract class OracleBase extends Driver
@@ -41,7 +41,7 @@ abstract class OracleBase extends Driver
      *
      * @var array
      */
-    protected $_baseConfig = [
+    protected array $_baseConfig = [
         'persistent' => true,
         'host' => 'localhost',
         'username' => 'root',
@@ -93,11 +93,8 @@ abstract class OracleBase extends Driver
      *
      * @return bool true on success
      */
-    public function connect(): bool
+    public function connect(): void
     {
-        if ($this->_connection) {
-            return true;
-        }
         $config = $this->_config;
 
         $config['init'][] = "ALTER SESSION SET NLS_DATE_FORMAT='YYYY-MM-DD HH24:MI:SS' NLS_TIMESTAMP_FORMAT='YYYY-MM-DD HH24:MI:SS' NLS_TIMESTAMP_TZ_FORMAT='YYYY-MM-DD HH24:MI:SS'";
@@ -119,8 +116,6 @@ abstract class OracleBase extends Driver
                      ->exec($command);
             }
         }
-
-        return true;
     }
 
     /**
@@ -216,7 +211,7 @@ abstract class OracleBase extends Driver
     /**
      * {@inheritDoc}
      */
-    public function compileQuery(Query $query, ValueBinder $generator): array
+    public function compileQuery(Query $query, ValueBinder $generator): string
     {
         if ($this->_serverVersion !== null && $this->_serverVersion >= 12) {
             $processor = new Oracle12Compiler();
@@ -288,7 +283,7 @@ abstract class OracleBase extends Driver
     /**
      * @inheritDoc
      */
-    public function lastInsertId(?string $table = null, ?string $column = null)
+    public function lastInsertId(?string $table = null): string
     {
         [$schema, $table] = explode('.', $table);
         if (!isset($table)) {
@@ -347,8 +342,8 @@ abstract class OracleBase extends Driver
     /**
      * Wrap statement into cakephp statements to provide additional functionality.
      *
-     * @param \CakeDC\OracleDriver\Database\Driver\Statement $statement Original statement to wrap.
-     * @return \CakeDC\OracleDriver\Database\Statement\OracleStatement
+     * @param \Portal89\OracleDriver\Database\Driver\Statement $statement Original statement to wrap.
+     * @return \Portal89\OracleDriver\Database\Statement\OracleStatement
      */
     protected function _wrapStatement($statement)
     {

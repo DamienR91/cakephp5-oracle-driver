@@ -2,19 +2,19 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-namespace CakeDC\OracleDriver\Test\TestCase\ORM;
+namespace Portal89\OracleDriver\Test\TestCase\ORM;
 
 use Cake\TestSuite\TestCase;
-use CakeDC\OracleDriver\ORM\Request;
+use Portal89\OracleDriver\ORM\Request;
 
 /**
  * Request test case.
@@ -139,7 +139,7 @@ class RequestTest extends TestCase
      */
     public function testConstructor()
     {
-        $request = $this->getMockBuilder('\CakeDC\OracleDriver\ORM\Request')
+        $request = $this->getMockBuilder('\Portal89\OracleDriver\ORM\Request')
             ->setMethods(['set'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -550,14 +550,14 @@ class RequestTest extends TestCase
      */
     public function testConstructorWithMarkNew()
     {
-        $request = $this->getMockBuilder('\CakeDC\OracleDriver\ORM\Request')
+        $request = $this->getMockBuilder('\Portal89\OracleDriver\ORM\Request')
             ->setMethods(['isNew', 'clean'])
             ->disableOriginalConstructor()
             ->getMock();
         $request->expects($this->never())->method('clean');
         $request->__construct(['a' => 'b', 'c' => 'd']);
 
-        $request = $this->getMockBuilder('\CakeDC\OracleDriver\ORM\Request')
+        $request = $this->getMockBuilder('\Portal89\OracleDriver\ORM\Request')
             ->setMethods(['isNew'])
             ->disableOriginalConstructor()
             ->getMock();

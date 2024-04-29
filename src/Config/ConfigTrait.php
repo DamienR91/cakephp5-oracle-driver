@@ -1,14 +1,14 @@
 <?php
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Config;
+namespace Portal89\OracleDriver\Config;
 
 use Cake\Core\Exception\Exception;
 use Cake\Utility\Hash;
@@ -72,7 +72,7 @@ trait ConfigTrait
      * @return mixed Config value being read, or the object itself on write operations.
      * @throws \Cake\Core\Exception\Exception When trying to set a key that is invalid.
      */
-    public function config($key = null, $value = null, $merge = true)
+    public function config($key = null, $value = null, $merge = true): array
     {
         if (!$this->_configInitialized) {
             $this->_config = $this->_defaultConfig;

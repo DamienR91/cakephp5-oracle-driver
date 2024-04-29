@@ -47,7 +47,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "CakeDC\\OracleDriver\\Test\\": "tests",
+            "Portal89\\OracleDriver\\Test\\": "tests",
             "Cake\\Test\\": "vendor/cakephp/cakephp/tests",
             "Company\\TestPluginThree\\Test\\": "vendor/cakephp/cakephp/tests/test_app/Plugin/Company/TestPluginThree/tests",
             "TestApp\\": "vendor/cakephp/cakephp/tests/test_app/TestApp",

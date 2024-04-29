@@ -2,26 +2,28 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\Dialect;
+namespace Portal89\OracleDriver\Database\Dialect;
 
 use Cake\Database\Expression\FunctionExpression;
 use Cake\Database\ExpressionInterface;
-use Cake\Database\Query;
+use Cake\Database\Query\SelectQuery;
+use Cake\Database\Query\InsertQuery;
 use Cake\Database\QueryCompiler;
+use Cake\Database\Schema\SchemaDialect;
 use Cake\Database\Schema\BaseSchema;
-use Cake\Database\SqlDialectTrait;
-use CakeDC\OracleDriver\Database\Expression\SimpleExpression;
-use CakeDC\OracleDriver\Database\Oracle12Compiler;
-use CakeDC\OracleDriver\Database\OracleCompiler;
-use CakeDC\OracleDriver\Database\Schema\OracleSchema;
+use Cake\Database\Driver\TupleComparisonTranslatorTrait;
+use Portal89\OracleDriver\Database\Expression\SimpleExpression;
+use Portal89\OracleDriver\Database\Oracle12Compiler;
+use Portal89\OracleDriver\Database\OracleCompiler;
+use Portal89\OracleDriver\Database\Schema\OracleSchema;
 
 /**
  * Contains functions that encapsulates the SQL dialect used by Oracle,
@@ -29,36 +31,36 @@ use CakeDC\OracleDriver\Database\Schema\OracleSchema;
  */
 trait OracleDialectTrait
 {
-    use SqlDialectTrait;
+    use TupleComparisonTranslatorTrait;
 
     /**
      *  String used to start a database identifier quoting to make it safe
      *
      * @var string
      */
-    protected $_startQuote = '"';
+    protected string $_startQuote = '';
 
     /**
      * String used to end a database identifier quoting to make it safe
      *
      * @var string
      */
-    protected $_endQuote = '"';
+    protected string $_endQuote = '';
 
     /**
      * The schema dialect class for this driver
      *
-     * @var \CakeDC\OracleDriver\Database\Schema\OracleSchema
+     * @var \Portal89\OracleDriver\Database\Schema\OracleSchema
      */
-    protected $_schemaDialect;
+    protected SchemaDialect $_schemaDialect;
 
     /**
      * Distinct clause needs no transformation
      *
-     * @param \Cake\Database\Query $query The query to be transformed
-     * @return \Cake\Database\Query
+     * @param \Cake\Database\Query\SelectQuery $query The query to be transformed
+     * @return \Cake\Database\Query\SelectQuery
      */
-    protected function _transformDistinct(Query $query): Query
+    protected function _transformDistinct(SelectQuery $query): SelectQuery
     {
         return $query;
     }
@@ -66,10 +68,10 @@ trait OracleDialectTrait
     /**
      * Modify the limit/offset to oracle
      *
-     * @param \Cake\Database\Query $query The query to translate
-     * @return \Cake\Database\Query The modified query
+     * @param \Cake\Database\Query\SelectQuery $query The query to translate
+     * @return \Cake\Database\Query\SelectQuery The modified query
      */
-    protected function _selectQueryTranslator(Query $query): Query
+    protected function _selectQueryTranslator(SelectQuery $query): SelectQuery
     {
         $limit = $query->clause('limit');
         $offset = $query->clause('offset');
@@ -242,13 +244,11 @@ trait OracleDialectTrait
      * Used by Cake\Database\Schema package to reflect schema and
      * generate schema.
      *
-     * @return \CakeDC\OracleDriver\Database\Schema\OracleSchema
+     * @return Cake\Database\Schema\SchemaDialect
      */
-    public function schemaDialect(): BaseSchema
+    public function schemaDialect(): SchemaDialect
     {
-        if (!$this->_schemaDialect) {
-            $this->_schemaDialect = new OracleSchema($this);
-        }
+        $this->_schemaDialect = new OracleSchema($this);
 
         return $this->_schemaDialect;
     }
@@ -307,7 +307,7 @@ trait OracleDialectTrait
     /**
      * {@inheritDoc}
      *
-     * @return \CakeDC\OracleDriver\Database\OracleCompiler
+     * @return \Portal89\OracleDriver\Database\OracleCompiler
      */
     public function newCompiler(): QueryCompiler
     {
@@ -327,10 +327,10 @@ trait OracleDialectTrait
      * The way Oracle works with multi insert is by having multiple
      * "SELECT FROM DUAL" select statements joined with UNION.
      *
-     * @param \Cake\Database\Query $query The query to translate
-     * @return \Cake\Database\Query
+     * @param \Cake\Database\Query\InsertQuery $query The query to translate
+     * @return \Cake\Database\Query\InsertQuery
      */
-    protected function _insertQueryTranslator(Query $query): Query
+    protected function _insertQueryTranslator(InsertQuery $query): InsertQuery
     {
         $v = $query->clause('values');
         if ((is_countable($v->getValues()) ? count($v->getValues()) : 0) === 1 || $v->getQuery()) {

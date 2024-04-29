@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace CakeDC\OracleDriver\Database;
+namespace Portal89\OracleDriver\Database;
 
 use Cake\Database\Expression\FunctionExpression;
-use CakeDC\OracleDriver\Core\SingletonTrait;
+use Portal89\OracleDriver\Core\SingletonTrait;
 
 /**
  * Contains methods related to generating FunctionExpression objects

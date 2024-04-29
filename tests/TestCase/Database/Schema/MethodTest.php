@@ -2,20 +2,20 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-namespace CakeDC\OracleDriver\Test\TestCase\Database\Schema;
+namespace Portal89\OracleDriver\Test\TestCase\Database\Schema;
 
-use CakeDC\OracleDriver\Database\Schema\MethodSchema;
-use CakeDC\OracleDriver\ORM\MethodRegistry;
-use CakeDC\OracleDriver\TestSuite\TestCase;
+use Portal89\OracleDriver\Database\Schema\MethodSchema;
+use Portal89\OracleDriver\ORM\MethodRegistry;
+use Portal89\OracleDriver\TestSuite\TestCase;
 
 /**
  * Test case for Method

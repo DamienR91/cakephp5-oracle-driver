@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\OCI8;
+namespace Portal89\OracleDriver\Database\OCI8;
 
 use PDO;
 
@@ -36,7 +36,7 @@ class OCI8Statement extends \PDOStatement implements \IteratorAggregate
     protected $_sth;
 
     /**
-     * @var \CakeDC\OracleDriver\Database\OCI8\OCI8Connection
+     * @var \Portal89\OracleDriver\Database\OCI8\OCI8Connection
      */
     protected $_conn;
 
@@ -92,7 +92,7 @@ class OCI8Statement extends \PDOStatement implements \IteratorAggregate
      *
      * @param resource $dbh The connection handle.
      * @param string|resource $statement The SQL statement.
-     * @param \CakeDC\OracleDriver\Database\OCI8\OCI8Connection $conn OCI connection.
+     * @param \Portal89\OracleDriver\Database\OCI8\OCI8Connection $conn OCI connection.
      */
     public function __construct($dbh, $statement, OCI8Connection $conn)
     {
@@ -465,7 +465,7 @@ class OCI8Statement extends \PDOStatement implements \IteratorAggregate
      * @param int|null $fetchMode The fetch mode must be one of the PDO::FETCH_* constants.
      * @param mixed|null $param Column number, class name or object.
      * @param array|null $arguments Constructor arguments.
-     * @throws \CakeDC\OracleDriver\Database\OCI8\Oci8Exception
+     * @throws \Portal89\OracleDriver\Database\OCI8\Oci8Exception
      * @return bool TRUE on success or FALSE on failure.
      */
     public function setFetchMode($fetchMode, $param = null, $arguments = [])

@@ -2,22 +2,22 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\ORM;
+namespace Portal89\OracleDriver\ORM;
 
 use Cake\Core\App;
 use Cake\Datasource\ConnectionManager;
 use Cake\Utility\Inflector;
-use CakeDC\OracleDriver\Database\OracleConnection;
-use CakeDC\OracleDriver\Database\Schema\MethodSchema;
-use CakeDC\OracleDriver\ORM\Exception\MissingRequestException;
+use Portal89\OracleDriver\Database\OracleConnection;
+use Portal89\OracleDriver\Database\Schema\MethodSchema;
+use Portal89\OracleDriver\ORM\Exception\MissingRequestException;
 
 class Method
 {
@@ -38,7 +38,7 @@ class Method
     /**
      * The schema object containing a description of this method fields
      *
-     * @var \CakeDC\OracleDriver\Database\Schema\MethodSchema
+     * @var \Portal89\OracleDriver\Database\Schema\MethodSchema
      */
     protected $_schema;
 
@@ -103,7 +103,7 @@ class Method
     /**
      * Sets the connection instance.
      *
-     * @param \CakeDC\OracleDriver\Database\OracleConnection $connection The connection instance
+     * @param \Portal89\OracleDriver\Database\OracleConnection $connection The connection instance
      * @return $this
      */
     public function setConnection(OracleConnection $connection)
@@ -116,12 +116,12 @@ class Method
     /**
      * Returns the connection instance.
      *
-     * @return \CakeDC\OracleDriver\Database\OracleConnection
+     * @return \Portal89\OracleDriver\Database\OracleConnection
      */
     public function getConnection(): OracleConnection
     {
         if (!$this->_connection) {
-            /** @var \CakeDC\OracleDriver\Database\OracleConnection $connection */
+            /** @var \Portal89\OracleDriver\Database\OracleConnection $connection */
             $connection = ConnectionManager::get(static::defaultConnectionName());
             $this->_connection = $connection;
         }
@@ -132,7 +132,7 @@ class Method
     /**
      * Returns the schema method object describing this method's parameters.
      *
-     * @return \CakeDC\OracleDriver\Database\Schema\MethodSchema
+     * @return \Portal89\OracleDriver\Database\Schema\MethodSchema
      */
     public function getSchema(): MethodSchema
     {
@@ -149,12 +149,12 @@ class Method
     /**
      * Sets the schema method object describing this method's parameters.
      *
-     * If an \CakeDC\OracleDriver\Database\Schema\MethodSchema is passed, it will be used for
+     * If an \Portal89\OracleDriver\Database\Schema\MethodSchema is passed, it will be used for
      * this method instead of the default one.
      *
-     * If an array is passed, a new \CakeDC\OracleDriver\Database\Schema\MethodSchema will be constructed out of it and used as the schema for this method.
+     * If an array is passed, a new \Portal89\OracleDriver\Database\Schema\MethodSchema will be constructed out of it and used as the schema for this method.
      *
-     * @param array|\CakeDC\OracleDriver\Database\Schema\MethodSchema|null $schema New schema to be used for this table
+     * @param array|\Portal89\OracleDriver\Database\Schema\MethodSchema|null $schema New schema to be used for this table
      * @return $this
      */
     public function setSchema($schema)
@@ -178,13 +178,13 @@ class Method
      * ### Example:
      *
      * ```
-     * protected function _initializeSchema(\CakeDC\OracleDriver\Database\Schema\MethodSchema $method) {
+     * protected function _initializeSchema(\Portal89\OracleDriver\Database\Schema\MethodSchema $method) {
      *  return $method;
      * }
      * ```
      *
-     * @param \CakeDC\OracleDriver\Database\Schema\MethodSchema $method The method definition fetched from database.
-     * @return \CakeDC\OracleDriver\Database\Schema\MethodSchema the altered schema
+     * @param \Portal89\OracleDriver\Database\Schema\MethodSchema $method The method definition fetched from database.
+     * @return \Portal89\OracleDriver\Database\Schema\MethodSchema the altered schema
      * @api
      */
     protected function _initializeSchema(MethodSchema $method)
@@ -196,13 +196,13 @@ class Method
      * Returns the class used to keep request parameters for this method
      *
      * @param string|null $name the name of the class to use
-     * @throws \CakeDC\OracleDriver\ORM\Exception\MissingRequestException when the request class cannot be found
+     * @throws \Portal89\OracleDriver\ORM\Exception\MissingRequestException when the request class cannot be found
      * @return string
      */
     public function requestClass($name = null)
     {
         if ($name === null && !$this->_requestClass) {
-            $default = '\CakeDC\OracleDriver\ORM\Request';
+            $default = '\Portal89\OracleDriver\ORM\Request';
             $self = static::class;
             $parts = explode('\\', $self);
 
@@ -255,7 +255,7 @@ class Method
      * Builds new request object for current method.
      *
      * @param array $data Parameters data.
-     * @return \CakeDC\OracleDriver\ORM\Request
+     * @return \Portal89\OracleDriver\ORM\Request
      */
     public function newRequest($data = null)
     {
@@ -273,7 +273,7 @@ class Method
     /**
      * Execute request. Request should be initialized.
      *
-     * @param \CakeDC\OracleDriver\ORM\RequestInterface $request Request object instance.
+     * @param \Portal89\OracleDriver\ORM\RequestInterface $request Request object instance.
      * @return mixed
      */
     public function execute(RequestInterface $request)
@@ -341,7 +341,7 @@ class Method
      * instance is created through the MethodRegistry without a connection.
      *
      * @return string
-     * @see \CakeDC\OracleDriver\ORM\MethodRegistry::get()
+     * @see \Portal89\OracleDriver\ORM\MethodRegistry::get()
      */
     public static function defaultConnectionName()
     {

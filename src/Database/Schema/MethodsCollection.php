@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\Schema;
+namespace Portal89\OracleDriver\Database\Schema;
 
 use Cake\Database\Exception;
 use Cake\Datasource\ConnectionInterface;
@@ -102,7 +102,7 @@ class MethodsCollection
      *
      * @param string $name The name of the method to describe.
      * @param array $options The options to use, see above.
-     * @return \CakeDC\OracleDriver\Database\Schema\MethodSchema Object with method metadata.
+     * @return \Portal89\OracleDriver\Database\Schema\MethodSchema Object with method metadata.
      * @throws \Cake\Database\Exception when method cannot be described.
      */
     public function describe($name, array $options = [])
@@ -122,7 +122,7 @@ class MethodsCollection
     /**
      * Helper method for running each step of the reflection process.
      *
-     * @param \CakeDC\OracleDriver\Database\Schema\MethodSchema $method Object with method metadata.
+     * @param \Portal89\OracleDriver\Database\Schema\MethodSchema $method Object with method metadata.
      * @param string $name The method name.
      * @param array $config The config data.
      * @return void

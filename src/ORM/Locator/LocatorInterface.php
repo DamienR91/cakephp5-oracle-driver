@@ -2,17 +2,17 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\ORM\Locator;
+namespace Portal89\OracleDriver\ORM\Locator;
 
-use CakeDC\OracleDriver\ORM\Method;
+use Portal89\OracleDriver\ORM\Method;
 
 /**
  * Registries for Method objects should implement this interface.
@@ -34,7 +34,7 @@ interface LocatorInterface
      *
      * @param string $alias The alias name you want to get.
      * @param array $options The options you want to build the method with.
-     * @return \CakeDC\OracleDriver\ORM\Method
+     * @return \Portal89\OracleDriver\ORM\Method
      */
     public function get($alias, array $options = []);
 
@@ -50,8 +50,8 @@ interface LocatorInterface
      * Set an instance.
      *
      * @param string $alias The alias to set.
-     * @param \CakeDC\OracleDriver\ORM\Method $object The method to set.
-     * @return \CakeDC\OracleDriver\ORM\Method
+     * @param \Portal89\OracleDriver\ORM\Method $object The method to set.
+     * @return \Portal89\OracleDriver\ORM\Method
      */
     public function set($alias, Method $object);
 

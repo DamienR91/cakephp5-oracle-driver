@@ -2,20 +2,20 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\ORM;
+namespace Portal89\OracleDriver\ORM;
 
 use Cake\Database\TypeConverterTrait;
 use Cake\Utility\Inflector;
-use CakeDC\OracleDriver\Database\Schema\MethodSchema;
-use CakeDC\OracleDriver\ORM\Method\ResultSet;
+use Portal89\OracleDriver\Database\Schema\MethodSchema;
+use Portal89\OracleDriver\ORM\Method\ResultSet;
 use InvalidArgumentException;
 
 /**
@@ -56,7 +56,7 @@ trait RequestTrait
     /**
      * Holds the repository of the method class for the instance object
      *
-     * @var \CakeDC\OracleDriver\ORM\Method
+     * @var \Portal89\OracleDriver\ORM\Method
      */
     protected $_repository;
 
@@ -427,7 +427,7 @@ trait RequestTrait
      *
      * @param string $name Property name.
      * @param array $options Cursor ResultSet configuration options.
-     * @return \CakeDC\OracleDriver\ORM\Method\ResultSet
+     * @return \Portal89\OracleDriver\ORM\Method\ResultSet
      */
     public function fetchCursor($name, $options = [])
     {
@@ -475,7 +475,7 @@ trait RequestTrait
     /**
      * Apply schema structure to the request object.
      *
-     * @param \CakeDC\OracleDriver\Database\Schema\MethodSchema $schema Method schema object instance.
+     * @param \Portal89\OracleDriver\Database\Schema\MethodSchema $schema Method schema object instance.
      * @return void
      */
     public function applySchema(MethodSchema $schema)

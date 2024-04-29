@@ -23,10 +23,10 @@
 			</arguments>
 		</listener>
 		<listener
-				class="\CakeDC\OracleDriver\TestSuite\Fixture\OracleFixtureInjector"
+				class="\Portal89\OracleDriver\TestSuite\Fixture\OracleFixtureInjector"
 				file="./src/TestSuite/Fixture/OracleFixtureInjector.php">
 			<arguments>
-				<object class="\CakeDC\OracleDriver\TestSuite\Fixture\OracleFixtureManager"/>
+				<object class="\Portal89\OracleDriver\TestSuite\Fixture\OracleFixtureManager"/>
 			</arguments>
 		</listener>
 	</listeners>
@@ -43,14 +43,14 @@
         <ini name="memory_limit" value="-1"/>
         <ini name="apc.enable_cli" value="1"/>
 		<env name="db_dsn"
-			 value="oracle://username:password@XE?className=CakeDC\OracleDriver\Database\OracleConnection&amp;driver=CakeDC\OracleDriver\Database\Driver\OracleOCI&amp;host=oracle11g&amp;database=XE"/>
+			 value="oracle://username:password@XE?className=Portal89\OracleDriver\Database\OracleConnection&amp;driver=Portal89\OracleDriver\Database\Driver\OracleOCI&amp;host=oracle11g&amp;database=XE"/>
 		<!-- oracle pdo
-		<env name="db_dsn" value="oracle://username:password@XE?className=CakeDC\OracleDriver\Database\OracleConnection&amp;driver==CakeDC\OracleDriver\Database\Driver\OraclePDO&amp;host=oracle11g&amp;database=XE"/>
+		<env name="db_dsn" value="oracle://username:password@XE?className=Portal89\OracleDriver\Database\OracleConnection&amp;driver==Portal89\OracleDriver\Database\Driver\OraclePDO&amp;host=oracle11g&amp;database=XE"/>
 
 
 		 oracle oci
 
-		<env name="db_dsn" value="oracle://username:password@XE?className=CakeDC\OracleDriver\Database\OracleConnection&amp;driver==CakeDC\OracleDriver\Database\Driver\OracleOCI&amp;host=oracle11g&amp;database=XE"/>
+		<env name="db_dsn" value="oracle://username:password@XE?className=Portal89\OracleDriver\Database\OracleConnection&amp;driver==Portal89\OracleDriver\Database\Driver\OracleOCI&amp;host=oracle11g&amp;database=XE"/>
 
 		-->
 	</php>

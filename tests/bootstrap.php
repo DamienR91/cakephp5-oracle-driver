@@ -49,9 +49,9 @@ _define('TEST_APP', CORE_TESTS . 'test_app' . DS);
 require_once ROOT . '/vendor/cakephp/cakephp/src/basics.php';
 require_once ROOT . '/vendor/autoload.php';
 
-//Cake\Core\Configure::write('App', ['namespace' => 'CakeDC\\OracleDriver\\Test\\App']);
+//Cake\Core\Configure::write('App', ['namespace' => 'Portal89\\OracleDriver\\Test\\App']);
 Cake\Core\Configure::write('App', [
-    'namespace' => 'CakeDC\\OracleDriver\\Test\\App',
+    'namespace' => 'Portal89\\OracleDriver\\Test\\App',
     'encoding' => 'UTF-8',
     'base' => false,
     'baseUrl' => false,
@@ -107,7 +107,7 @@ Cake\Core\Configure::write('Session', [
     'defaults' => 'php',
 ]);
 
-// Cake\Core\Plugin::load('CakeDC\\OracleDriver', [
+// Cake\Core\Plugin::load('Portal89\\OracleDriver', [
     // 'path' => ROOT . DS,
     // 'autoload' => true
 // ]);
@@ -129,7 +129,7 @@ Cake\Datasource\ConnectionManager::setConfig('test', [
     // TEST_APP . 'Plugin' . DS,
 // ]);
 
-class_alias('CakeDC\OracleDriver\Test\App\Controller\AppController', 'App\Controller\AppController');
+class_alias('Portal89\OracleDriver\Test\App\Controller\AppController', 'App\Controller\AppController');
 
 $isCli = PHP_SAPI === 'cli';
 if ($isCli) {
@@ -138,6 +138,6 @@ if ($isCli) {
     (new Cake\Error\ErrorHandler(Cake\Core\Configure::read('Error')))->register();
 }
 \Cake\Routing\Router::reload();
-$application = new \CakeDC\OracleDriver\Test\App\Application(CONFIG);
+$application = new \Portal89\OracleDriver\Test\App\Application(CONFIG);
 $application->bootstrap();
 $application->pluginBootstrap();

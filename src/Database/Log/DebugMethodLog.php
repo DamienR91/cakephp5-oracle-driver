@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 /**
- * Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * Copyright 2024, Portal89 (https://portal89.com.br)
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright Copyright 2015 - 2020, Cake Development Corporation (http://cakedc.com)
+ * @copyright Copyright 2024, Portal89 (https://portal89.com.br)
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-namespace CakeDC\OracleDriver\Database\Log;
+namespace Portal89\OracleDriver\Database\Log;
 
 /**
  * DebugKit Method logger.
@@ -31,7 +31,7 @@ class DebugMethodLog extends MethodLogger
     /**
      * Decorated logger.
      *
-     * @var \CakeDC\OracleDriver\Database\Log\LoggedMethod
+     * @var \Portal89\OracleDriver\Database\Log\LoggedMethod
      */
     protected $_logger;
 
@@ -59,7 +59,7 @@ class DebugMethodLog extends MethodLogger
     /**
      * Constructor
      *
-     * @param \CakeDC\OracleDriver\Database\Log\MethodLogger $logger The logger to decorate and spy on.
+     * @param \Portal89\OracleDriver\Database\Log\MethodLogger $logger The logger to decorate and spy on.
      * @param string $name The name of the connection being logged.
      */
     public function __construct($logger, $name)
@@ -111,7 +111,7 @@ class DebugMethodLog extends MethodLogger
     /**
      * Log queries
      *
-     * @param \CakeDC\OracleDriver\Database\Log\LoggedMethod $method The query being logged.
+     * @param \Portal89\OracleDriver\Database\Log\LoggedMethod $method The query being logged.
      * @return void
      */
     public function log(LoggedMethod $method)
