@@ -39,7 +39,7 @@ class BoolType extends BaseType implements TypeInterface, BatchCastingInterface
      *
      * @var string|null
      */
-    protected $_name;
+    protected ?string $_name = null;
 
     /**
      * Constructor.
@@ -61,7 +61,7 @@ class BoolType extends BaseType implements TypeInterface, BatchCastingInterface
      * @param \Cake\Database\DriverInterface $driver The driver instance to convert with.
      * @return bool|null
      */
-    public function toDatabase($value, DriverInterface $driver)
+    public function toDatabase(mixed $value, \Cake\Database\Driver $driver): mixed
     {
         if ($value === null) {
             return $value;
@@ -88,7 +88,7 @@ class BoolType extends BaseType implements TypeInterface, BatchCastingInterface
      * @param \Cake\Database\DriverInterface $driver The driver instance to convert with.
      * @return bool|null
      */
-    public function toPHP($value, DriverInterface $driver)
+    public function toPHP(mixed $value, \Cake\Database\Driver $driver): mixed
     {
         if ($value === null || $value === true || $value === false) {
             return $value;
@@ -106,7 +106,7 @@ class BoolType extends BaseType implements TypeInterface, BatchCastingInterface
      *
      * @return array
      */
-    public function manyToPHP(array $values, array $fields, DriverInterface $driver): array
+    public function manyToPHP(array $values, array $fields, \Cake\Database\Driver $driver): array
     {
         foreach ($fields as $field) {
             if (!isset($values[$field]) || $values[$field] === true || $values[$field] === false) {
@@ -142,7 +142,7 @@ class BoolType extends BaseType implements TypeInterface, BatchCastingInterface
      * @param \Cake\Database\DriverInterface $driver The driver.
      * @return int
      */
-    public function toStatement($value, DriverInterface $driver)
+    public function toStatement(mixed $value, \Cake\Database\Driver $driver): int
     {
         if ($value === null) {
             return PDO::PARAM_NULL;
@@ -157,7 +157,7 @@ class BoolType extends BaseType implements TypeInterface, BatchCastingInterface
      * @param mixed $value The value to convert.
      * @return bool|null Converted value.
      */
-    public function marshal($value)
+    public function marshal(mixed $value): mixed
     {
         if ($value === null) {
             return null;

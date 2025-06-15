@@ -121,7 +121,7 @@ class OCI8Connection extends PDO
      */
     public function prepare(string $query, array $options = []): \PDOStatement|false
     {
-        return new \OCI8Statement($this->dbh, $query, $this);
+        return new \Portal89\OracleDriver\Database\OCI8\OCI8Statement($this->dbh, $query, $this);
     }
 
     /**

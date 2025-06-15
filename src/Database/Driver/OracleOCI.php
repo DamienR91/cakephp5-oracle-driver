@@ -34,7 +34,7 @@ class OracleOCI extends OracleBase
             'persistent' => empty($config['persistent']) ? false : $config['persistent'],
         ];
         $connection = new OCI8Connection($dsn, $config['username'], $config['password'], $config['flags']);
-        $this->setConnection($connection);
+        $this->_connection = $connection;
 
         return true;
     }

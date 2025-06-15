@@ -9,7 +9,9 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-use Cake\Database\Type;
+use Cake\Database\TypeFactory;
+use Portal89\OracleDriver\Database\Type\CursorType;
+use Portal89\OracleDriver\Database\Type\BoolType;
 
-Type::map('cursor', 'Portal89\OracleDriver\Database\Type\CursorType');
-Type::map('boolean', 'Portal89\OracleDriver\Database\Type\BoolType');
+TypeFactory::set('cursor', new CursorType());
+TypeFactory::set('boolean', new BoolType());

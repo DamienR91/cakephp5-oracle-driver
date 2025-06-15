@@ -24,5 +24,5 @@ class Plugin extends BasePlugin
      *
      * @var string
      */
-    protected $name = 'OracleDriver';
+    protected ?string $name = 'OracleDriver';
 }

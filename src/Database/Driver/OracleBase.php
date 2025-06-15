@@ -110,12 +110,12 @@ abstract class OracleBase extends Driver
         $dsn = $this->getDSN();
         $this->_connect($dsn, $config);
 
-        if (!empty($config['init'])) {
-            foreach ((array)$config['init'] as $command) {
-                $this->getConnection()
-                     ->exec($command);
-            }
-        }
+        if (!empty($config['init']) && $this->_connection) {
+    	    foreach ((array)$config['init'] as $command) {
+                $this->_connection->exec($command);
+    	    }
+	}
+
     }
 
     /**
@@ -347,7 +347,7 @@ abstract class OracleBase extends Driver
      */
     protected function _wrapStatement($statement)
     {
-        return new OracleStatement(new PDOStatement($statement, $this), $this);
+        return new OracleStatement($statement, $this);
     }
 
     /**

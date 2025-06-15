@@ -14,16 +14,20 @@ namespace Portal89\OracleDriver\Database\Statement;
 
 use Cake\Database\Statement\BufferedStatement;
 use Cake\Database\Statement\BufferResultsTrait;
-use Cake\Database\Statement\StatementDecorator;
+use PDO;
 
 /**
  * Statement class meant to be used by an Oracle driver
  */
-class OracleStatement extends StatementDecorator
-{
-    use BufferResultsTrait;
+use Cake\Database\StatementInterface;
 
-    public $queryString;
+class OracleStatement implements StatementInterface
+{
+	protected $_statement;
+	protected $_driver;
+	protected $_bufferResults = false;
+    
+	public $queryString;
 
     public $paramMap;
 
@@ -80,7 +84,7 @@ class OracleStatement extends StatementDecorator
     /**
      * {@inheritDoc}
      */
-    public function bindValue($column, $value, $type = 'string'): void
+    public function bindValue(string|int $column, mixed $value, string|int|null $type = 'string'): void
     {
         $column = $this->paramMap[$column] ?? $column;
 
@@ -92,9 +96,18 @@ class OracleStatement extends StatementDecorator
     /**
      * {@inheritDoc}
      */
-    public function fetch($type = 'num')
+    public function fetch(string|int $mode = PDO::FETCH_BOTH): mixed
     {
-        $result = $this->_statement->fetch($type);
+		if (is_string($mode)) {
+			$mode = match (strtolower($mode)) {
+				'assoc' => \PDO::FETCH_ASSOC,
+				'num' => \PDO::FETCH_NUM,
+				'both' => \PDO::FETCH_BOTH,
+				default => \PDO::FETCH_BOTH,
+			};
+		}
+		
+        $result = $this->_statement->fetch($mode);
         if (is_array($result)) {
             foreach ($result as $key => &$value) {
                 if (is_resource($value)) {
@@ -109,9 +122,18 @@ class OracleStatement extends StatementDecorator
     /**
      * {@inheritDoc}
      */
-    public function fetchAll($type = 'num')
+    public function fetchAll(string|int $mode = PDO::FETCH_BOTH): array
     {
-        $result = $this->_statement->fetchAll($type);
+		if (is_string($mode)) {
+			$mode = match (strtolower($mode)) {
+				'assoc' => \PDO::FETCH_ASSOC,
+				'num' => \PDO::FETCH_NUM,
+				'both' => \PDO::FETCH_BOTH,
+				default => \PDO::FETCH_BOTH,
+			};
+		}
+		
+        $result = $this->_statement->fetchAll($mode);
         if (is_array($result)) {
             foreach ($result as $k => $row) {
                 foreach ($row as $key => $value) {
@@ -124,4 +146,67 @@ class OracleStatement extends StatementDecorator
 
         return $result;
     }
+	
+	public function fetchColumn(int $column = 0): mixed
+	{
+		return $this->_statement->fetchColumn($column);
+	}
+
+	public function rowCount(): int
+	{
+		return $this->_statement->rowCount();
+	}
+
+	public function columnCount(): int
+	{
+		return $this->_statement->columnCount();
+	}
+
+	public function closeCursor(): void
+	{
+		if (method_exists($this->_statement, 'closeCursor')) {
+			$this->_statement->closeCursor();
+		}
+	}
+
+	public function errorCode(): string
+	{
+		return (string) $this->_statement->errorCode();
+	}
+
+	public function errorInfo(): array
+	{
+		return $this->_statement->errorInfo();
+	}
+
+	public function lastInsertId(?string $table = null, ?string $column = null): string|int
+	{
+		return $this->_statement->lastInsertId($table, $column);
+	}
+
+	public function getIterator(): \Iterator
+	{
+		return new \ArrayIterator($this->fetchAll());
+	}
+	
+	public function fetchAssoc(): array
+	{
+		return $this->_statement->fetch(PDO::FETCH_ASSOC);
+	}
+
+	public function queryString(): string
+	{
+		return $this->_statement->queryString ?? '';
+	}
+
+	public function getBoundParams(): array
+	{
+		return $this->paramMap ?? [];
+	}
+	
+	public function __construct($statement, $driver)
+	{
+		$this->_statement = $statement;
+		$this->_driver = $driver;
+	}
 }
